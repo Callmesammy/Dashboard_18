@@ -4,8 +4,15 @@ package Model;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
-
+/**
+ *
+ * @author user
+ */
 public class Model_Menu {
+
+    public Model_Menu(String string) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 
     /**
      * @return the icon
@@ -36,51 +43,36 @@ public class Model_Menu {
     }
 
     /**
-     * @return the description
+     * @return the type
      */
-    public String getDescription() {
-        return description;
+    public MenuType getType() {
+        return type;
     }
 
     /**
-     * @param description the description to set
+     * @param type the type to set
      */
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    /**
-     * @return the Type
-     */
-    public Menutype getType() {
-        return Type;
-    }
-
-    /**
-     * @param Type the Type to set
-     */
-    public void setType(Menutype Type) {
-        this.Type = Type;
+    public void setType(MenuType type) {
+        this.type = type;
     }
     private String icon;
     private String name;
-    private String description;
-    private Menutype Type;
+    private MenuType type;
 
-    public Model_Menu(String icon, String name, String description, Menutype Type) {
+    public Model_Menu(String icon, String name, MenuType type) {
         this.icon = icon;
         this.name = name;
-        this.description = description;
-        this.Type = Type;
+        this.type = type;
     }
 
     public Model_Menu() {
     }
     
-    public Icon toImage(){
-        return new ImageIcon(getClass().getResource("/cool/icon" +icon+ ".png"));
+    public Icon toIcon(){
+        return new ImageIcon(getClass().getResource("/cool/icon/" +icon+ ".png"));
     }
-    public static enum Menutype{
+    
+    public static enum MenuType{
         MENU, TITLE, EMPTY
     }
 }
