@@ -12,6 +12,11 @@ import java.awt.RenderingHints;
 public class Menu_item extends javax.swing.JPanel {
 
     /**
+     * @return the selected
+     */
+  
+
+    /**
      * @param selected the selected to set
      */
    
@@ -23,8 +28,11 @@ public class Menu_item extends javax.swing.JPanel {
         setOpaque(false);
         if (data.getType()==Model_Menu.MenuType.MENU) {
             
-            Isicon.setIcon(data.toIcon());
+                Isicon.setIcon(data.toIcon());
             Isdescription.setText(data.getName());
+            
+            
+            
            
         }else if (data.getType()==Model_Menu.MenuType.TITLE) {
             Isicon.setText(data.getName());
@@ -68,14 +76,17 @@ public class Menu_item extends javax.swing.JPanel {
             .addComponent(Isdescription, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
-
+  public boolean isSelected() {
+        return selected;
+        
+    }
     @Override
     protected void paintComponent(Graphics g) {
         if (selected) {
        Graphics2D g2 = (Graphics2D)g;
        g2.setColor(new Color(248, 78, 240));
        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-       g2.fillRect(getWidth()-5, -2, getWidth(), getHeight());
+       g2.fillRect(1, 0, 2, getHeight());
         }
       
         super.paintComponent(g); 
