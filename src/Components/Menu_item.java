@@ -22,8 +22,10 @@ public class Menu_item extends javax.swing.JPanel {
         initComponents();
         setOpaque(false);
         if (data.getType()==Model_Menu.MenuType.MENU) {
+            
             Isicon.setIcon(data.toIcon());
             Isdescription.setText(data.getName());
+           
         }else if (data.getType()==Model_Menu.MenuType.TITLE) {
             Isicon.setText(data.getName());
             Isicon.setFont(new Font("sansserif", 1, 12));
@@ -46,7 +48,7 @@ public class Menu_item extends javax.swing.JPanel {
         Isicon = new javax.swing.JLabel();
         Isdescription = new javax.swing.JLabel();
 
-        Isdescription.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        Isdescription.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         Isdescription.setText("Enter Data");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -70,10 +72,10 @@ public class Menu_item extends javax.swing.JPanel {
     @Override
     protected void paintComponent(Graphics g) {
         if (selected) {
-             Graphics2D g2 = (Graphics2D)g;
-        g2.setColor(new Color(255,255,255,80));
-        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-        g2.fillRoundRect(10, 10, getWidth(), getHeight(), 15, 15); 
+       Graphics2D g2 = (Graphics2D)g;
+       g2.setColor(new Color(248, 78, 240));
+       g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+       g2.fillRect(getWidth()-5, -2, getWidth(), getHeight());
         }
       
         super.paintComponent(g); 
