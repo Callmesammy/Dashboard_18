@@ -27,6 +27,7 @@ public class Main extends javax.swing.JFrame {
         background3 = new swing.Background();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        search1 = new Components.Search();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -49,18 +50,25 @@ public class Main extends javax.swing.JFrame {
             .addGroup(background3Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addGroup(background3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(502, Short.MAX_VALUE))
+                    .addGroup(background3Layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addContainerGap(502, Short.MAX_VALUE))
+                    .addGroup(background3Layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(search1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(22, 22, 22))))
         );
         background3Layout.setVerticalGroup(
             background3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(background3Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addComponent(jLabel1)
+                .addGroup(background3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(search1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(439, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout background1Layout = new javax.swing.GroupLayout(background1);
@@ -75,7 +83,7 @@ public class Main extends javax.swing.JFrame {
         );
         background1Layout.setVerticalGroup(
             background1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(menu1, javax.swing.GroupLayout.PREFERRED_SIZE, 513, Short.MAX_VALUE)
+            .addComponent(menu1, javax.swing.GroupLayout.DEFAULT_SIZE, 513, Short.MAX_VALUE)
             .addGroup(background1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(background3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -138,5 +146,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private Components.Menu menu1;
+    private Components.Search search1;
     // End of variables declaration//GEN-END:variables
 }
